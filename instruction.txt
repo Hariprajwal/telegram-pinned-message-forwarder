@@ -1,0 +1,45 @@
+ Telegram Pinned Message Forwarder — Instructions
+
+Follow these steps to set up and run the bot:
+
+1. Clone the Repository
+   git clone https://github.com/your-username/telegram-pinned-forwarder.git
+   cd telegram-pinned-forwarder
+
+2. Install Dependencies
+   Ensure you have Python 3.8+ installed, then run:
+   pip install -r requirements.txt
+
+3. Create a Telegram App
+   Visit https://my.telegram.org, log in, go to "API Development Tools", and create a new app to get:
+   - api_id
+   - api_hash
+
+4. Get Your Session Started
+   The first time you run the script, it will prompt you to enter your phone number and Telegram verification code.
+
+5. Edit the Configuration
+   Open main.py and set the following variables:
+   source_chat_id = -100XXXXXXXXXX  # Group where messages are pinned
+   destination_chat_id = -100YYYYYYYYYY  # Group where messages will be forwarded
+
+6. Make Sure You Have Access
+   Ensure the user session running the script is a member of both groups and has permission to view and forward pinned messages.
+
+7. (Optional) Use a .env File
+   You can create a .env file and store your credentials like:
+   API_ID=your_api_id
+   API_HASH=your_api_hash
+
+8. Run the Script
+   Run the script using:
+   python main.py
+
+9. Verify the Output
+   Once executed, the script will:
+   - Fetch the latest pinned message from the source group.
+   - Forward it to the destination group.
+   - Display a success message.
+
+10. Done
+    You’ve successfully set up the pinned message forwarder. You can now automate or schedule it using cron or task schedulers.
